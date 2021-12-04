@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Référence</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-header>
+        <h1> <strong>Nos Références</strong></h1>
+      </ion-card-header>
+          <ion-list item-left>
+            <ion-item >
+              <ion-label><a routerLink='/menu/reference' > Tout</a></ion-label>
+              <ion-label><a routerLink='/menu/reference/ministeres' > Ministéres</a> </ion-label>
+              <ion-label><a routerLink='/menu/reference/etablissement-public' > Etablissements publiques</a></ion-label>
+              <ion-label><a routerLink='/menu/reference/entreprise' > Entreprise</a></ion-label>
+            </ion-item>
+          </ion-list>
+          <ion-list  *ngFor="let img of entrepriseImg">
+            <ion-item > 
+             <img [src]="img.imgUrl" alt={{img.alt}}>
+            </ion-item>
+          </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
