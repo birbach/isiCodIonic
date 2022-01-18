@@ -11,13 +11,13 @@ export class ContactService {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   readonly APIUrl = environment.APIUrl;
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  EMAIL: 'email';
+  EMAIL: 'simpleEmail';
 
   constructor(private http: HttpClient) { }
 
 
-  getEmailAPi(email: Email): Observable<any>{
-    return this.http.post<any>(this.APIUrl + this.EMAIL, email);
+  getEmailAPi(email: any): Observable<Email[]>{
+    return this.http.post<Email[]>(this.APIUrl + 'simpleEmail', email);
 
   }
 }

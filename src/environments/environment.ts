@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  APIUrl: 'http://localhost:8081/apis/',
+  APIUrl: 'http://192.168.4.15:8080/apis/',
 };
 
 /*

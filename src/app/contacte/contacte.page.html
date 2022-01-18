@@ -12,13 +12,13 @@
   <ion-card-content>
     <form [formGroup]="emailForm" (ngSubmit)="sendEmail()" >
       <ion-label> Votre nom:</ion-label>
-      <ion-input type="text" placeholder="Entre votre Nom" formControlName="nom" required></ion-input>
+      <ion-input type="text" placeholder="Entre votre Nom"  required></ion-input>
       <ion-label> Votre adress email:</ion-label>
-      <ion-input type="email" placeholder="Entre votre adress email" formControlName="email" required></ion-input>
+      <ion-input type="email" placeholder="Entre votre adress email" formControlName="toEmail" required></ion-input>
       <ion-label> Objet:</ion-label>
-      <ion-input type="text" placeholder="Object" formControlName="objet"></ion-input>
+      <ion-input type="text" placeholder="Object" formControlName="subject" required></ion-input>
       <ion-label> Message:</ion-label>
-      <ion-textarea rows="4" cols="50" formControlName="message" required> </ion-textarea>
+      <ion-textarea rows="4" cols="50" formControlName="body" required> </ion-textarea>
 
       <ion-button type="submit" >Envoyer Message</ion-button>
     </form>
