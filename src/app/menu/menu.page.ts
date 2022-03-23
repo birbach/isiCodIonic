@@ -14,6 +14,7 @@ export class MenuPage implements OnInit {
     { title: 'TECHNOLOGIES', url: '/menu/technologie', icon: 'heart' },
     { title: 'RÉFÉRENCE', url: '/menu/reference', icon: 'archive' },
     { title: 'PARTENAIRES', url: '/menu/partenaire', icon: 'body' },
+    { title: 'GALLERY', url: '/menu/gallery', icon: 'images' },
     { title: 'CONTACTEZ-NOUS', url: '/menu/contacte', icon: 'mail-unread' },
     { title: 'LOCALISATION', url: '/menu/localisation', icon: 'map' },
     { title: 'METEO', url: '/menu/meteo', icon: 'snow' }

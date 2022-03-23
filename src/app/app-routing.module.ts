@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'reference',
     loadChildren: () => import('./reference/reference.module').then( m => m.ReferencePageModule)
-  }
+  },
+  {
+    path: 'gallery',
+    loadChildren: () => import('./gallery/gallery.module').then( m => m.GalleryPageModule)
+  },
 ];
 
 @NgModule({

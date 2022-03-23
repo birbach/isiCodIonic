@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Gallery</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>KeyWord: </ion-label>
+        <ion-input type="text" [(ngModel)]="imageTitle" placeholder="Enter un mote"></ion-input>
+        <ion-button (click)="onLoadImages()">OK</ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-list *ngIf="photosData">
+    
+      <ion-card *ngFor="let photo of photosData">
+        <ion-card-header>
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-img [src]="photo.userImageURL"></ion-img>
+            </ion-avatar>
+            <ion-label>{{photo.user}}</ion-label>
+          </ion-item>
+        
+        </ion-card-header>
+        <ion-card-content>
+          <ion-img [src]="photo.previewURL"></ion-img>
+        </ion-card-content>
+        <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <ion-button fill="outline" size="small">
+                <ion-icon name="thumbs-up"></ion-icon>
+                <ion-label>{{photo.likes}}</ion-label>
+              </ion-button>
+            </ion-col>
+          
+            <ion-col>
+              <ion-button fill="outline" size="small">
+                <ion-icon name="clipboard"></ion-icon>
+                <ion-label>{{photo.comments}}</ion-label>
+              </ion-button>
+            </ion-col>
+          
+            <ion-col>
+              <ion-button fill="outline" size="small">
+                <ion-icon name="share"></ion-icon>
+                <ion-label>{{photo.downloads}}</ion-label>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+  </ion-list>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
